@@ -1,0 +1,13 @@
+<h3>Todo Lists</h3>
+
+@if (!todoItems.length) {
+    <p>Loading...</p>
+}
+<ul class="todos">
+    @for(todo of todoItems();track $index){
+        <li class="todos_item">
+            <input id="todo-{{todo.id}}" type="checkbox" [value]="todo.completed" />
+            <label for="todo-{{todo.id}}">{{todo.title}}</label>
+        </li>
+    }
+</ul>
